@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#151b25"><title>K.P.'s Kitchen | Customer Orders</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">KP</div><div><strong>K.P.'s Kitchen</strong><span>Customer Order Dashboard</span></div></div>
+    <div class="header-right"><span id="todayLabel"></span><button id="managerButton" class="manager-button">Manager login</button></div>
+  </header>
+  <main class="page-wrap">
+    <section class="welcome-row"><div><p class="eyebrow">7 NOVEMBER ORDERS</p><h1>Customer orders</h1><p class="subheading">Select a customer to view their order and update its status.</p></div><div class="lock-state" id="lockState">🔒 Manager access required to update</div></section>
+    <section class="stats-grid">
+      <article class="stat-card"><span>Total orders</span><strong id="totalCount">0</strong></article>
+      <article class="stat-card new-stat"><span>New</span><strong id="newCount">0</strong></article>
+      <article class="stat-card complete-stat"><span>Complete</span><strong id="completeCount">0</strong></article>
+    </section>
+    <section class="content-grid">
+      <aside class="customer-panel panel">
+        <div class="panel-heading"><div><h2>Customers</h2><p id="customerCount">Loading orders…</p></div></div>
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search customer name…" autocomplete="off"></label>
+        <div class="filter-row"><button class="filter active" data-filter="All">All</button><button class="filter" data-filter="Bulk">Bulk</button><button class="filter" data-filter="Tiffin">Tiffin</button></div>
+        <div id="customerList" class="customer-list"></div>
+      </aside>
+      <section class="detail-panel panel" id="detailPanel">
+        <div class="empty-state"><div class="empty-icon">☷</div><h2>Select a customer</h2><p>Their order details will appear here.</p></div>
+      </section>
+    </section>
+    <footer>Orders imported from the <strong>7Nov Bulk</strong> and <strong>7Nov Tiffin</strong> sheets.</footer>
+  </main>
+  <div class="modal-backdrop" id="loginModal" aria-hidden="true"><div class="login-modal"><button class="close-modal" id="closeModal" aria-label="Close">×</button><div class="modal-icon">🔐</div><h2>Manager login</h2><p>Enter the manager password to update order statuses.</p><form id="loginForm"><input id="passwordInput" type="password" inputmode="numeric" placeholder="Enter password" autocomplete="current-password"><button class="primary-button" type="submit">Log in</button><p class="login-error" id="loginError"></p></form></div></div>
+  <script src="script.js"></script>
+</body></html>
